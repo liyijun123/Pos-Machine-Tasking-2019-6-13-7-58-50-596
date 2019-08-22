@@ -68,3 +68,21 @@ it('打小票',()=>{
     var text = assemble(assembleInput,10);
     console.log(text);
 })
+
+
+    it('should generate Receipts',()=>{
+//given 
+    const productCodes = ['0001','0003','0002','0003'];
+
+//when
+    var Receipts = generateReceipts(productCodes);
+//then
+    expect(Receipts).toBe(
+    "Receipts"+"\n"+
+    "----------------"+"\n"+
+    "Coca Cola"+"\t"+1+"\t"+3+"\n"+
+    "Diet Coke"+"\t"+1+"\t"+4+"\n"+
+    "Pepsi-Cola"+"\t"+2+"\t"+5+"\n"+
+    "----------------"+"\n"+17
+);
+})
