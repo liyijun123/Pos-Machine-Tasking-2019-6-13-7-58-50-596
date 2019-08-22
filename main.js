@@ -82,9 +82,15 @@ function countProducts (codes) {
        
 
    }
-         
+    
+   function generateReceipts(productCodes){ 
+   let receiptItems = generateReceiptItems(productCodes);
+   let total = countTotalPrice(receiptItems);
+   let str = assemble(receiptItems,total);
+   return str;
+ }
 
 
 
 
-    module.exports = {countProducts,fetchproduct,generatesdReceipItems,assemble}  ;
+    module.exports = {countProducts,fetchproduct,generatesdReceipItems,assemble,generateReceipts}  ;
